@@ -10,6 +10,8 @@ const UrlFetcher = ({
   handleSearch, 
   handleExportJSON, 
   handleExportPDF,
+  handleExportExcel,
+  handleExportDocs,
   dataLength, 
   fieldCount, 
   displayCount, 
@@ -85,7 +87,7 @@ const UrlFetcher = ({
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => handleExportPDF} 
+          onClick={handleExportPDF} 
           className="interactive-element flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-xl hover:shadow-lg hover:shadow-red-500/25 text-sm font-bold"
         >
           <FileBadge2Icon className="w-4 h-4" />
@@ -95,7 +97,7 @@ const UrlFetcher = ({
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => alert('Export Excel functionality coming soon!')} 
+          onClick={handleExportExcel} 
           className="interactive-element flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-yellow-500 to-green-500 text-white rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 text-sm font-bold"
         >
           <FileSpreadsheet className="w-4 h-4" />
@@ -105,7 +107,7 @@ const UrlFetcher = ({
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
-          onClick={() => alert('Export DOC functionality coming soon!')} 
+          onClick={handleExportDocs} 
           className="interactive-element flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl hover:shadow-lg hover:shadow-blue-500/25 text-sm font-bold"
         >
           <LucideFileX className="w-4 h-4" />

@@ -51,7 +51,18 @@ const Home = () => {
   };
 
     const handleExportPDF = () => {
-        exportToPDF(data)
+      toast('Will be available by 12:00 PM!', { icon: '⏳',});  
+      // exportToPDF(data)
+    };
+
+    const handleExportExcel = () => {
+      toast('Will be available by 12:00 PM!', { icon: '⏳',});  
+      // exportToPDF(data)
+    };
+
+    const handleExportDocs = () => {
+      toast('Will be available by 12:00 PM!', { icon: '⏳',});  
+      // exportToPDF(data)
     };
 
   const handleShowCard = () => {
@@ -127,6 +138,8 @@ const Home = () => {
                   handleSearch={handleSearch}
                   handleExportJSON={handleExportJSON}
                   handleExportPDF={handleExportPDF}
+                  handleExportDocs={handleExportDocs}
+                  handleExportExcel={handleExportExcel}
                   handleShowCard={handleShowCard}
                   dataLength={data.length}
                   fieldCount={data.length > 0 ? Object.keys(data[0] || {}).length : 0}
