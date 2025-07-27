@@ -106,7 +106,7 @@ const Home = () => {
                   transition={{ duration: 0.6 }}
                   className="text-5xl md:text-7xl font-bold text-transparent bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text leading-tight"
                 >
-                  Data Visualizer
+                  Phenix Data Visualizer
                 </motion.h1>
 
                 <motion.p 
