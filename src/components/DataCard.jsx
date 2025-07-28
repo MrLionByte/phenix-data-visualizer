@@ -53,7 +53,7 @@ const DataCard = ({ item, onDelete, onUpdate, index }) => {
   };
 
   const handleFieldRename = (oldKey, newKey) => {
-    if (oldKey === 'id' || newKey === 'id') return; // Prevent renaming to/from 'id'
+    if (oldKey === 'id' || newKey === 'id') return;
     const { [oldKey]: value, ...rest } = editedItem;
     setEditedItem({ ...rest, [newKey]: value });
     setEditingField(newKey);
@@ -132,7 +132,6 @@ const DataCard = ({ item, onDelete, onUpdate, index }) => {
         </div>
       </div>
 
-      {/* Fields Section */}
       <div className="space-y-4">
         <AnimatePresence mode="wait">
           {visibleEntries.map(([key, value]) => (
