@@ -51,8 +51,8 @@ const Home = () => {
   };
 
     const handleExportPDF = () => {
-      toast('Will be available by 12:00 PM!', { icon: '⏳',});  
-      // exportToPDF(data)
+      // toast('Will be available by 12:00 PM!', { icon: '⏳',});  
+      exportToPDF(data)
     };
 
     const handleExportExcel = () => {
@@ -61,8 +61,8 @@ const Home = () => {
     };
 
     const handleExportDocs = () => {
-      toast('Will be available by 12:00 PM!', { icon: '⏳',});  
-      // exportToPDF(data)
+      // toast('Will be available by 12:00 PM!', { icon: '⏳',});  
+      exportToDoc(data)
     };
 
   const handleShowCard = () => {
