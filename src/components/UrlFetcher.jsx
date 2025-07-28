@@ -1,7 +1,6 @@
-import { Link2, Search, FileSpreadsheet, FileBadge2Icon, Download, LucideFileX } from "lucide-react";
+import { Link2, Search, FileSpreadsheet, FileBadge2Icon, Download, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import {LoadingDots} from './Loadings';
-
 
 const UrlFetcher = ({ 
   url, 
@@ -11,7 +10,6 @@ const UrlFetcher = ({
   handleExportJSON, 
   handleExportPDF,
   handleExportExcel,
-  handleExportDocs,
   dataLength, 
   fieldCount, 
   displayCount, 
@@ -25,6 +23,7 @@ const UrlFetcher = ({
       transition={{ duration: 0.6 }}
       className="w-full max-w-6xl space-y-10 url-components"
     >
+
       <div className="flex flex-col sm:flex-row w-full items-stretch gap-6">
         <div className="relative flex-1">
           <Link2 className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5 z-10" />
@@ -62,9 +61,22 @@ const UrlFetcher = ({
             </>
           )}
         </motion.button>
+
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={() => setUrl('https://jsonplaceholder.typicode.com/posts')}
+          disabled={loading}
+          className="flex cursor-pointer items-center justify-center space-x-2 px-2 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold rounded-2xl hover:from-green-600 hover:to-emerald-600 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 disabled:opacity-50 disabled:cursor-not-allowed min-w-[60px]"
+        >
+          <Globe className="w-5 h-5" />
+          <span>Demo URL</span>
+        </motion.button>
+
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-7">
         <motion.button 
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -102,16 +114,6 @@ const UrlFetcher = ({
         >
           <FileSpreadsheet className="w-4 h-4" />
           <span>Excel</span>
-        </motion.button>
-
-        <motion.button 
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          onClick={handleExportDocs} 
-          className="interactive-element flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl hover:shadow-lg hover:shadow-blue-500/25 text-sm font-bold"
-        >
-          <LucideFileX className="w-4 h-4" />
-          <span>DOC</span>
         </motion.button>
       </div>
 

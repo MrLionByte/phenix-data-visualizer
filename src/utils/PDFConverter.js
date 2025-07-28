@@ -2,7 +2,6 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 export const exportToPDF = (data) => {
-  console.log('PDF Working :', data);
 
   const doc = new jsPDF();
   const columns = Object.keys(data[0]);
@@ -13,5 +12,5 @@ export const exportToPDF = (data) => {
     body: rows,
   });
 
-  doc.save('phinixcards-data.pdf');
+  doc.save('phenix-cards-data.pdf');
 };

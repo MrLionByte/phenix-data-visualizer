@@ -6,11 +6,10 @@ import UrlFetcher from '../components/UrlFetcher';
 import toast from 'react-hot-toast';
 import {LoadingSpinner} from '../components/Loadings';
 import {exportToPDF} from '../utils/PDFConverter';
-import {exportToDoc} from '../utils/DOCConverter';
-
+import {exportToExcel} from '../utils/EXCELConverter';
 
 const Home = () => {
-  const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/posts');
+  const [url, setUrl] = useState('');
   const [data, setData] = useState([]);
   const [originalData, setOriginalData] = useState([]);
   const [showCard, setShowCard] = useState(false);
@@ -51,23 +50,14 @@ const Home = () => {
   };
 
     const handleExportPDF = () => {
-      // toast('Will be available by 12:00 PM!', { icon: '⏳',});  
       exportToPDF(data)
     };
 
     const handleExportExcel = () => {
-      toast('Will be available by 12:00 PM!', { icon: '⏳',});  
-      // exportToPDF(data)
-    };
-
-    const handleExportDocs = () => {
-      // toast('Will be available by 12:00 PM!', { icon: '⏳',});  
-      exportToDoc(data)
+      exportToExcel(data)
     };
 
   const handleShowCard = () => {
-    console.log(data);
-    
     if(data.length > 0){
         setShowCard(prev => !prev);
     } else{
@@ -129,7 +119,7 @@ const Home = () => {
                   Transform any API endpoint into beautiful, interactive cards. Fetch, explore, edit, and manage your data with modern design and powerful functionality.
                 </motion.p>
               </div>
-
+              
               <div className="w-full flex justify-center mt-4">
                 <UrlFetcher
                   url={url}
@@ -138,7 +128,6 @@ const Home = () => {
                   handleSearch={handleSearch}
                   handleExportJSON={handleExportJSON}
                   handleExportPDF={handleExportPDF}
-                  handleExportDocs={handleExportDocs}
                   handleExportExcel={handleExportExcel}
                   handleShowCard={handleShowCard}
                   dataLength={data.length}
